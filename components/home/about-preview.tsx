@@ -1,45 +1,20 @@
-import Link from "next/link"
-import { AnimateOnScroll } from "@/components/animate-on-scroll"
-import { Button } from "@/components/ui/button"
-import { CheckCircle, ArrowRight } from "lucide-react"
+import Link from "next/link";
+import { AnimateOnScroll } from "@/components/animate-on-scroll";
+import { Button } from "@/components/ui/button";
+import { CheckCircle, ArrowRight } from "lucide-react";
 
 const highlights = [
   "Over 10 years of industry experience",
   "Licensed and fully insured professionals",
   "Commitment to quality and safety",
   "Transparent pricing with no hidden costs",
-]
+];
 
 export function AboutPreview() {
   return (
     <section className="py-24 bg-background">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Image Side */}
-          <AnimateOnScroll animation="fade-right">
-            <div className="relative">
-              <div className="aspect-[4/3] rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-24 h-24 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <span className="text-4xl font-bold text-primary">K</span>
-                    </div>
-                    <p className="text-muted-foreground text-sm">
-                      Quality Craftsmanship Since Day One
-                    </p>
-                  </div>
-                </div>
-              </div>
-              {/* Floating Card */}
-              <div className="absolute -bottom-6 -right-6 bg-card p-6 rounded-xl border border-border shadow-xl max-w-[200px]">
-                <div className="text-3xl font-bold text-primary">500+</div>
-                <p className="text-muted-foreground text-sm mt-1">
-                  Projects Successfully Delivered
-                </p>
-              </div>
-            </div>
-          </AnimateOnScroll>
-
           {/* Content Side */}
           <AnimateOnScroll animation="fade-left">
             <span className="text-primary text-sm font-medium tracking-wider uppercase">
@@ -74,5 +49,5 @@ export function AboutPreview() {
         </div>
       </div>
     </section>
-  )
+  );
 }

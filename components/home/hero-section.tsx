@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { ArrowRight, ChevronDown } from "lucide-react"
+import Link from "next/link";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { ArrowRight, ChevronDown } from "lucide-react";
 
 export function HeroSection() {
   return (
@@ -21,7 +21,7 @@ export function HeroSection() {
       </div>
 
       {/* Content */}
-      <div className="container mx-auto px-4 lg:px-8 relative z-10 pt-20">
+      <div className="container mx-auto px-4 lg:px-8 relative z-10 pt-28 md:pt-20 pb-12 md:pb-0">
         <div className="max-w-4xl mx-auto text-center">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white text-sm font-medium mb-8 animate-fade-in">
@@ -39,8 +39,8 @@ export function HeroSection() {
           {/* Subheading */}
           <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed animate-fade-in-up animation-delay-200">
             Expert construction and maintenance services tailored to your needs.
-            From carpentry to welding, we deliver quality workmanship that stands
-            the test of time.
+            From carpentry to welding, we deliver quality workmanship that
+            stands the test of time.
           </p>
 
           {/* CTA Buttons */}
@@ -64,16 +64,26 @@ export function HeroSection() {
           {/* Stats */}
           <div className="grid grid-cols-3 gap-8 mt-20 pt-10 border-t border-white/20 animate-fade-in-up animation-delay-500">
             <div>
-              <div className="text-3xl md:text-4xl font-bold text-white">10+</div>
+              <div className="text-3xl md:text-4xl font-bold text-white">
+                10+
+              </div>
               <div className="text-sm text-white/70 mt-1">Years Experience</div>
             </div>
             <div>
-              <div className="text-3xl md:text-4xl font-bold text-white">500+</div>
-              <div className="text-sm text-white/70 mt-1">Projects Completed</div>
+              <div className="text-3xl md:text-4xl font-bold text-white">
+                500+
+              </div>
+              <div className="text-sm text-white/70 mt-1">
+                Projects Completed
+              </div>
             </div>
             <div>
-              <div className="text-3xl md:text-4xl font-bold text-white">100%</div>
-              <div className="text-sm text-white/70 mt-1">Client Satisfaction</div>
+              <div className="text-3xl md:text-4xl font-bold text-white">
+                100%
+              </div>
+              <div className="text-sm text-white/70 mt-1">
+                Client Satisfaction
+              </div>
             </div>
           </div>
         </div>
@@ -86,12 +96,22 @@ export function HeroSection() {
 
       <style jsx>{`
         @keyframes fade-in {
-          from { opacity: 0; }
-          to { opacity: 1; }
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
         }
         @keyframes fade-in-up {
-          from { opacity: 0; transform: translateY(20px); }
-          to { opacity: 1; transform: translateY(0); }
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
         }
         .animate-fade-in {
           animation: fade-in 0.6s ease-out forwards;
@@ -113,5 +133,5 @@ export function HeroSection() {
         }
       `}</style>
     </section>
-  )
+  );
 }

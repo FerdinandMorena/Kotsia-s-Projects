@@ -1,5 +1,5 @@
-import { AnimateOnScroll } from "@/components/animate-on-scroll"
-import { Award, Clock, Shield, Users } from "lucide-react"
+import { AnimateOnScroll } from "@/components/animate-on-scroll";
+import { Award, Clock, Shield, Users } from "lucide-react";
 
 const reasons = [
   {
@@ -15,18 +15,12 @@ const reasons = [
       "We respect your time and ensure all projects are completed within agreed timelines.",
   },
   {
-    icon: Shield,
-    title: "Reliability & Trust",
-    description:
-      "Licensed, insured, and committed to transparent communication throughout your project.",
-  },
-  {
     icon: Users,
     title: "Expert Team",
     description:
       "Our skilled professionals bring years of experience and dedication to every job.",
   },
-]
+];
 
 export function WhyChooseUs() {
   return (
@@ -67,5 +61,5 @@ export function WhyChooseUs() {
         </div>
       </div>
     </section>
-  )
+  );
 }
