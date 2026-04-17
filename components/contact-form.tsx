@@ -1,26 +1,63 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Spinner } from "@/components/ui/spinner"
-import { CheckCircle } from "lucide-react"
+import { useState } from "react";
+import emailjs from "@emailjs/browser";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Spinner } from "@/components/ui/spinner";
+import { CheckCircle } from "lucide-react";
+import { toast } from "sonner";
 
 export function ContactForm() {
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [isSubmitted, setIsSubmitted] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    service: "",
+    message: "",
+  });
+
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >,
+  ) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    setIsSubmitting(true)
+    e.preventDefault();
+    setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500))
+    try {
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        formData,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!,
+      );
 
-    setIsSubmitting(false)
-    setIsSubmitted(true)
-  }
+      setIsSubmitted(true);
+      toast.success("Message sent successfully 🎉");
+
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        service: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error(error);
+      toast.error("Failed to send message. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   if (isSubmitted) {
     return (
@@ -32,8 +69,10 @@ export function ContactForm() {
           Thank You!
         </h3>
         <p className="text-muted-foreground">
-          We&apos;ve received your message and will get back to you within 24 hours.
+          We&apos;ve received your message and will get back to you within 24
+          hours.
         </p>
+
         <Button
           variant="outline"
           className="mt-6"
@@ -42,72 +81,56 @@ export function ContactForm() {
           Send Another Message
         </Button>
       </div>
-    )
+    );
   }
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
+      {/* Name + Email */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         <div className="space-y-2">
-          <label
-            htmlFor="name"
-            className="text-sm font-medium text-foreground"
-          >
-            Full Name
-          </label>
+          <label className="text-sm font-medium">Full Name</label>
           <Input
-            id="name"
             name="name"
+            value={formData.name}
+            onChange={handleChange}
             placeholder="John Doe"
             required
-            className="bg-card"
           />
         </div>
+
         <div className="space-y-2">
-          <label
-            htmlFor="email"
-            className="text-sm font-medium text-foreground"
-          >
-            Email Address
-          </label>
+          <label className="text-sm font-medium">Email</label>
           <Input
-            id="email"
             name="email"
             type="email"
+            value={formData.email}
+            onChange={handleChange}
             placeholder="john@example.com"
             required
-            className="bg-card"
           />
         </div>
       </div>
 
+      {/* Phone */}
       <div className="space-y-2">
-        <label
-          htmlFor="phone"
-          className="text-sm font-medium text-foreground"
-        >
-          Phone Number
-        </label>
+        <label className="text-sm font-medium">Phone Number</label>
         <Input
-          id="phone"
           name="phone"
-          type="tel"
+          value={formData.phone}
+          onChange={handleChange}
           placeholder="+27 123 456 7890"
-          className="bg-card"
         />
       </div>
 
+      {/* Service */}
       <div className="space-y-2">
-        <label
-          htmlFor="service"
-          className="text-sm font-medium text-foreground"
-        >
-          Service Required
-        </label>
+        <label className="text-sm font-medium">Service Required</label>
         <select
-          id="service"
           name="service"
-          className="flex h-10 w-full rounded-md border border-input bg-card px-3 py-2 text-sm text-foreground ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+          value={formData.service}
+          onChange={handleChange}
+          className="flex h-10 w-full rounded-md border px-3 py-2 text-sm"
         >
           <option value="">Select a service</option>
           <option value="carpentry">Carpentry</option>
@@ -116,27 +139,24 @@ export function ContactForm() {
           <option value="plastering">RhinoLite Plastering</option>
           <option value="drainage">Stormwater Drainage</option>
           <option value="welding">Welding</option>
-          <option value="other">Other / Multiple Services</option>
+          <option value="other">Other</option>
         </select>
       </div>
 
+      {/* Message */}
       <div className="space-y-2">
-        <label
-          htmlFor="message"
-          className="text-sm font-medium text-foreground"
-        >
-          Project Details
-        </label>
+        <label className="text-sm font-medium">Project Details</label>
         <Textarea
-          id="message"
           name="message"
-          placeholder="Please describe your project requirements..."
+          value={formData.message}
+          onChange={handleChange}
+          placeholder="Describe your project..."
           rows={5}
           required
-          className="bg-card resize-none"
         />
       </div>
 
+      {/* Submit */}
       <Button type="submit" className="w-full" disabled={isSubmitting}>
         {isSubmitting ? (
           <>
@@ -149,9 +169,8 @@ export function ContactForm() {
       </Button>
 
       <p className="text-xs text-muted-foreground text-center">
-        By submitting this form, you agree to our privacy policy. We&apos;ll never
-        share your information with third parties.
+        We respect your privacy. Your details are never shared.
       </p>
     </form>
-  )
+  );
 }
