@@ -11,8 +11,8 @@ export function HeroSection() {
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
-          src="/images/hero-home.jpg"
-          alt="Construction site at sunset"
+          src="/images/53.webp"
+          alt="Carpenter working on custom woodwork in a workshop"
           fill
           className="object-cover"
           priority
@@ -21,26 +21,24 @@ export function HeroSection() {
       </div>
 
       {/* Content */}
-      <div className="container mx-auto px-4 lg:px-8 relative z-10 pt-28 md:pt-20 pb-12 md:pb-0">
+      <div className="container mx-auto px-4 lg:px-8 relative z-10 pt-28 md:pt-28 pb-12 md:pb-12">
         <div className="max-w-4xl mx-auto text-center">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white text-sm font-medium mb-8 animate-fade-in">
-            Professional Construction Services
+            Professional Carpentry Services
           </div>
 
           {/* Main Heading */}
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight text-balance animate-fade-in-up">
-            Building with{" "}
-            <span className="text-primary-foreground">Precision</span>
-            {" & "}
-            <span className="text-primary-foreground">Trust</span>
+            Skilled Carpentry Services by{" "}
+            <span className="text-primary-foreground">Expert Craftsman</span>
           </h1>
 
           {/* Subheading */}
           <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed animate-fade-in-up animation-delay-200">
-            Expert construction and maintenance services tailored to your needs.
-            From carpentry to welding, we deliver quality workmanship that
-            stands the test of time.
+            Custom woodwork and home improvement services delivered with
+            precision, quality, and reliability. From custom furniture to
+            structural repairs, we bring craftsmanship that lasts.
           </p>
 
           {/* CTA Buttons */}
@@ -67,15 +65,15 @@ export function HeroSection() {
               <div className="text-3xl md:text-4xl font-bold text-white">
                 10+
               </div>
-              <div className="text-sm text-white/70 mt-1">Years Experience</div>
+              <div className="text-sm text-white/70 mt-1">
+                Years as Carpenter
+              </div>
             </div>
             <div>
               <div className="text-3xl md:text-4xl font-bold text-white">
                 500+
               </div>
-              <div className="text-sm text-white/70 mt-1">
-                Projects Completed
-              </div>
+              <div className="text-sm text-white/70 mt-1">Custom Projects</div>
             </div>
             <div>
               <div className="text-3xl md:text-4xl font-bold text-white">

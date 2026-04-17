@@ -26,11 +26,12 @@ export default function HomePage() {
             className="text-center max-w-3xl mx-auto"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-6 text-balance">
-              Ready to Start Your Project?
+              Ready for Custom Woodwork?
             </h2>
             <p className="text-primary-foreground/80 text-lg mb-8 leading-relaxed">
-              Contact us today for a free consultation and quote. Let&apos;s
-              bring your vision to life with quality craftsmanship.
+              Contact me today for a free consultation. Let&apos;s discuss your
+              custom carpentry project and bring your vision to life with
+              quality craftsmanship.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button

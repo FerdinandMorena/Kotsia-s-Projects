@@ -5,176 +5,323 @@ import Link from "next/link";
 import Image from "next/image";
 import { AnimateOnScroll } from "@/components/animate-on-scroll";
 import { Button } from "@/components/ui/button";
-import type { CarouselApi } from "@/components/ui/carousel";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
-  DialogHeader,
   DialogTitle,
+  DialogDescription,
 } from "@/components/ui/dialog";
+
 import { cn } from "@/lib/utils";
 import { ArrowRight } from "lucide-react";
 
 const categories = [
   { id: "all", label: "All Projects" },
-  { id: "carpentry", label: "Carpentry" },
-  { id: "tiling", label: "Tiling" },
-  { id: "painting", label: "Painting" },
-  { id: "plastering", label: "Plastering" },
-  { id: "drainage", label: "Drainage" },
+  { id: "custom-tv-unit", label: "Custom TV Unit Installation" },
+  { id: "custom-wardrobe", label: "Custom Wardrobe Installation" },
   { id: "welding", label: "Welding" },
+  { id: "bathroom-tiling", label: "Bathroom Tiling & Installation" },
+  { id: "floor-tiling", label: "Floor Tiling" },
+  { id: "wall-tiling", label: "Wall Tiling" },
+  { id: "kitchen-renovation", label: "Kitchen Renovation" },
+  { id: "ceiling-installation", label: "Ceiling Installation" },
+  { id: "custom-carpentry", label: "Custom Carpentry" },
+  { id: "painting", label: "Painting" },
 ];
 
 const projects = [
   {
     id: 1,
-    title: "Modern Kitchen Renovation",
-    category: "carpentry",
-    description: "Complete kitchen cabinet installation with custom woodwork.",
+    title: "Custom TV Unit Installation",
+    category: "custom-tv-unit",
+    description: "Bespoke TV unit with integrated storage and modern design.",
     location: "Sandton, Johannesburg",
-    galleryImages: ["/images/service-carpentry.jpg", "/images/hero-home.jpg"],
+    galleryImages: [
+      "/images/29.webp",
+      "/images/30.webp",
+      "/images/31.webp",
+      "/images/32.webp",
+      "/images/56.webp",
+      "/images/71.webp",
+      "/images/72.webp",
+      "/images/73.webp",
+      "/images/85.webp",
+      "/images/86.webp",
+      "/images/87.webp",
+    ],
   },
   {
     id: 2,
-    title: "Bathroom Tile Installation",
-    category: "tiling",
-    description: "Full bathroom tiling with modern porcelain tiles.",
-    location: "Pretoria East",
-    galleryImages: ["/images/service-tiling.jpg", "/images/hero-services.jpg"],
+    title: "Custom Wardrobe Installation",
+    category: "custom-wardrobe",
+    description:
+      "Floor-to-ceiling custom wardrobe with sliding doors and organizers.",
+    location: "Bryanston, Johannesburg",
+    galleryImages: [
+      "/images/1.webp",
+      "/images/3.webp",
+      "/images/5.webp",
+      "/images/11.webp",
+      "/images/12.webp",
+      "/images/20.webp",
+      "/images/21.webp",
+      "/images/36.webp",
+      "/images/41.webp",
+      "/images/43.webp",
+      "/images/54.webp",
+      "/images/55.webp",
+      "/images/59.webp",
+      "/images/63.webp",
+      "/images/64.webp",
+      "/images/65.webp",
+      "/images/66.webp",
+      "/images/78.webp",
+      "/images/82.webp",
+      "/images/90.webp",
+    ],
   },
   {
     id: 3,
-    title: "Residential Exterior Painting",
-    category: "painting",
+    title: "Welding",
+    category: "welding",
     description:
-      "Complete exterior house painting with weather-resistant paint.",
-    location: "Centurion",
-    galleryImages: ["/images/service-painting.jpg", "/images/hero-home.jpg"],
+      "Custom security gates and burglar bars with intricate designs.",
+    location: "Fourways, Johannesburg",
+    galleryImages: [
+      "/images/2.webp",
+      "/images/4.webp",
+      "/images/39.webp",
+      "/images/77.webp",
+      "/images/79.webp",
+    ],
   },
   {
     id: 4,
-    title: "Office Wall Plastering",
-    category: "plastering",
-    description: "RhinoLite plastering for a commercial office space.",
-    location: "Rosebank, Johannesburg",
+    title: "Bathroom Tiling & Installation",
+    category: "bathroom-tiling",
+    description: "Complete bathroom tiling with premium tiles and fixtures.",
+    location: "Pretoria East",
     galleryImages: [
-      "/images/service-plastering.jpg",
-      "/images/hero-projects.jpg",
+      "/images/13.webp",
+      "/images/15.webp",
+      "/images/18.webp",
+      "/images/22.webp",
     ],
   },
   {
     id: 5,
-    title: "Property Drainage System",
-    category: "drainage",
-    description:
-      "Complete stormwater drainage installation for large property.",
-    location: "Midrand",
+    title: "Modern Floor Tiling",
+    category: "floor-tiling",
+    description: "Large format porcelain tiles for contemporary living spaces.",
+    location: "Centurion",
     galleryImages: [
-      "/images/service-drainage.jpg",
-      "/images/hero-services.jpg",
+      "/images/16.webp",
+      "/images/23.webp",
+      "/images/24.webp",
+      "/images/25.webp",
+      "/images/34.webp",
+      "/images/60.webp",
+      "/images/61.webp",
+      "/images/62.webp",
+      "/images/77.webp",
     ],
   },
   {
     id: 6,
-    title: "Security Gate Fabrication",
-    category: "welding",
-    description: "Custom security gate and burglar bar installation.",
-    location: "Fourways",
-    galleryImages: ["/images/service-welding.jpg", "/images/hero-projects.jpg"],
+    title: "Feature Wall Tiling",
+    category: "wall-tiling",
+    description:
+      "Decorative wall tiling with mosaic patterns and backsplash designs.",
+    location: "Randburg",
+    galleryImages: ["/images/14.webp", "/images/15.webp", "/images/18.webp"],
   },
   {
     id: 7,
-    title: "Custom Built-in Wardrobes",
-    category: "carpentry",
-    description: "Floor-to-ceiling built-in wardrobes with sliding doors.",
-    location: "Bryanston",
-    galleryImages: ["/images/service-carpentry.jpg", "/images/hero-home.jpg"],
+    title: "Complete Kitchen Renovation",
+    category: "kitchen-renovation",
+    description:
+      "Full kitchen makeover with custom cabinetry and modern finishes.",
+    location: "Sandton, Johannesburg",
+    galleryImages: [
+      "/images/6.webp",
+      "/images/7.webp",
+      "/images/9.webp",
+      "/images/17.webp",
+      "/images/26.webp",
+      "/images/27.webp",
+      "/images/33.webp",
+      "/images/35.webp",
+      "/images/38.webp",
+      "/images/42.webp",
+      "/images/57.webp",
+      "/images/58.webp",
+      "/images/80.webp",
+      "/images/81.webp",
+      "/images/89.webp",
+    ],
   },
   {
     id: 8,
-    title: "Pool Area Tiling",
-    category: "tiling",
-    description: "Non-slip tile installation around swimming pool area.",
-    location: "Randburg",
-    galleryImages: ["/images/service-tiling.jpg", "/images/hero-services.jpg"],
+    title: "Ceiling Installation & Design",
+    category: "ceiling-installation",
+    description:
+      "Custom ceiling installations with modern materials and finishes.",
+    location: "Midrand",
+    galleryImages: [
+      "/images/19.webp",
+      "/images/28.webp",
+      "/images/34.webp",
+      "/images/37.webp",
+      "/images/39.webp",
+      "/images/77.webp",
+      "/images/84.webp",
+      "/images/88.webp",
+    ],
   },
   {
     id: 9,
-    title: "Commercial Interior Painting",
-    category: "painting",
-    description: "Interior painting for retail store with specialty finishes.",
-    location: "Sandton City",
-    galleryImages: ["/images/service-painting.jpg", "/images/hero-home.jpg"],
+    title: "Custom Furniture & Carpentry",
+    category: "custom-carpentry",
+    description: "Bespoke furniture pieces and custom woodwork craftsmanship.",
+    location: "Rosebank, Johannesburg",
+    galleryImages: [
+      "/images/5.webp",
+      "/images/8.webp",
+      "/images/10.webp",
+      "/images/20.webp",
+      "/images/36.webp",
+      "/images/40.webp",
+      "/images/41.webp",
+      "/images/43.webp",
+      "/images/44.webp",
+      "/images/54.webp",
+      "/images/55.webp",
+      "/images/63.webp",
+      "/images/66.webp",
+      "/images/78.webp",
+      "/images/83.webp",
+    ],
   },
   {
     id: 10,
-    title: "New Build Plastering",
-    category: "plastering",
-    description: "Complete plastering for new residential development.",
+    title: "Interior/Exterior Painting Services",
+    category: "painting",
+    description:
+      "Professional interior painting with premium finishes and preparation.",
     location: "Waterfall Estate",
-    galleryImages: [
-      "/images/service-plastering.jpg",
-      "/images/hero-projects.jpg",
-    ],
-  },
-  {
-    id: 11,
-    title: "French Drain Installation",
-    category: "drainage",
-    description: "French drain system to prevent basement flooding.",
-    location: "Kyalami",
-    galleryImages: [
-      "/images/service-drainage.jpg",
-      "/images/hero-services.jpg",
-    ],
-  },
-  {
-    id: 12,
-    title: "Balustrade Installation",
-    category: "welding",
-    description: "Modern stainless steel balustrades for multi-story home.",
-    location: "Dainfern",
-    galleryImages: ["/images/service-welding.jpg", "/images/hero-projects.jpg"],
+    galleryImages: ["/images/28.webp", "/images/34.webp", "/images/88.webp"],
   },
 ];
 
 export default function ProjectsPage() {
   const [activeCategory, setActiveCategory] = useState("all");
-  const [selectedProject, setSelectedProject] = useState<
-    (typeof projects)[number] | null
-  >(null);
-  const [isGalleryOpen, setIsGalleryOpen] = useState(false);
-  const [galleryApi, setGalleryApi] = useState<CarouselApi | null>(null);
+  const [visibleCount, setVisibleCount] = useState(18);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   useEffect(() => {
-    if (!galleryApi) return;
-
-    const updateIndex = () => {
-      const index = galleryApi.selectedScrollSnap();
-      setSelectedImageIndex(index);
-    };
-
-    galleryApi.on("select", updateIndex);
-    updateIndex();
-
-    return () => {
-      galleryApi.off("select", updateIndex);
-    };
-  }, [galleryApi, selectedProject]);
+    setVisibleCount(18);
+    setSelectedImageIndex(0);
+  }, [activeCategory]);
 
   const filteredProjects =
     activeCategory === "all"
       ? projects
       : projects.filter((project) => project.category === activeCategory);
+
+  const filteredImages = filteredProjects.flatMap((project) =>
+    project.galleryImages.map((imageSrc, imageIndex) => ({
+      project,
+      imageSrc,
+      imageIndex,
+    })),
+  );
+
+  const visibleImages = filteredImages.slice(0, visibleCount);
+
+  const handleOpenImage = (index: number) => {
+    setSelectedImageIndex(index);
+    setIsDialogOpen(true);
+  };
+
+  function ImageModalViewer({
+    images,
+    index,
+    setIndex,
+    onClose,
+  }: {
+    images: any[];
+    index: number;
+    setIndex: (i: number) => void;
+    onClose: () => void;
+  }) {
+    const current = images[index];
+
+    const next = () => {
+      setIndex((index + 1) % images.length);
+    };
+
+    const prev = () => {
+      setIndex((index - 1 + images.length) % images.length);
+    };
+
+    useEffect(() => {
+      const handleKey = (e: KeyboardEvent) => {
+        if (e.key === "ArrowRight") next();
+        if (e.key === "ArrowLeft") prev();
+        if (e.key === "Escape") onClose();
+      };
+
+      window.addEventListener("keydown", handleKey);
+      return () => window.removeEventListener("keydown", handleKey);
+    }, [index]);
+
+    return (
+      <div className="relative w-full h-screen bg-white flex items-center justify-center">
+        {/* Image */}
+        <div className="relative w-full h-full flex items-center justify-center">
+          {current && (
+            <Image
+              src={current.imageSrc}
+              alt="Project image"
+              fill
+              className="object-contain p-6"
+              priority
+            />
+          )}
+        </div>
+
+        {/* Top Info */}
+        <div className="absolute left-4 top-4 rounded-full bg-black/60 px-4 py-2 text-sm text-white backdrop-blur">
+          {current?.project.title} • {index + 1}/{images.length}
+        </div>
+
+        {/* Close */}
+        <button
+          onClick={onClose}
+          className="absolute right-4 top-4 rounded-full bg-black/60 px-3 py-2 text-white hover:bg-black/80"
+        >
+          ✕
+        </button>
+
+        {/* Prev */}
+        <button
+          onClick={prev}
+          className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 text-white px-4 py-2 rounded-full hover:bg-black/70"
+        >
+          ‹
+        </button>
+
+        {/* Next */}
+        <button
+          onClick={next}
+          className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 text-white px-4 py-2 rounded-full hover:bg-black/70"
+        >
+          ›
+        </button>
+      </div>
+    );
+  }
 
   return (
     <>
@@ -182,8 +329,8 @@ export default function ProjectsPage() {
       <section className="relative pt-32 pb-24 min-h-[60vh] flex items-center">
         <div className="absolute inset-0">
           <Image
-            src="/images/hero-projects.jpg"
-            alt="Completed modern home"
+            src="/images/46.webp"
+            alt="Carpenters planning custom woodwork projects"
             fill
             className="object-cover"
             priority
@@ -229,170 +376,98 @@ export default function ProjectsPage() {
             </div>
           </AnimateOnScroll>
 
-          {/* Projects Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredProjects.map((project, index) => {
-              const categoryData = categories.find(
-                (c) => c.id === project.category,
-              );
+          {/* Image count */}
+          <div className="mb-6">
+            <p className="text-sm text-muted-foreground">
+              Showing {visibleImages.length} of {filteredImages.length} images
+              {activeCategory !== "all" &&
+                ` for ${categories.find((c) => c.id === activeCategory)?.label}`}
+            </p>
+          </div>
 
-              return (
-                <AnimateOnScroll
-                  key={project.id}
-                  animation="fade-up"
-                  delay={(index % 6) * 100}
+          {/* Image Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {visibleImages.map((item, index) => (
+              <AnimateOnScroll
+                key={`${item.project.id}-${item.imageIndex}-${index}`}
+                animation="fade-up"
+                delay={(index % 6) * 100}
+              >
+                <button
+                  type="button"
+                  onClick={() =>
+                    handleOpenImage(
+                      filteredImages.findIndex(
+                        (i) =>
+                          i.project.id === item.project.id &&
+                          i.imageSrc === item.imageSrc &&
+                          i.imageIndex === item.imageIndex,
+                      ),
+                    )
+                  }
+                  aria-label={`Open ${item.project.title} image ${item.imageIndex + 1}`}
+                  className="group overflow-hidden rounded-3xl border border-border bg-background shadow-sm transition hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-primary/60 w-full"
                 >
-                  <div className="group bg-background rounded-xl border border-border overflow-hidden hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5">
-                    <div className="relative aspect-4/3 overflow-hidden bg-background">
-                      <Image
-                        src={project.galleryImages[0]}
-                        alt={`${project.title} preview`}
-                        fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-105"
-                      />
-                      <button
-                        type="button"
-                        onClick={() => {
-                          setSelectedProject(project);
-                          setSelectedImageIndex(0);
-                          setIsGalleryOpen(true);
-                        }}
-                        className="absolute inset-0 bg-primary/80 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-primary-foreground font-medium"
-                      >
-                        View Gallery
-                      </button>
-                      <div className="absolute left-3 top-3 rounded-full bg-black/60 px-3 py-1 text-[11px] uppercase tracking-[0.2em] text-white">
-                        {project.galleryImages.length} images
-                      </div>
-                    </div>
-
-                    {/* Content */}
-                    <div className="p-6">
-                      <div className="flex items-center gap-2 mb-3">
-                        <span className="text-xs font-medium text-primary uppercase tracking-wider">
-                          {categoryData?.label}
-                        </span>
-                      </div>
-                      <h3 className="text-lg font-semibold text-foreground mb-2">
-                        {project.title}
-                      </h3>
-                      <p className="text-muted-foreground text-sm mb-3">
-                        {project.description}
-                      </p>
-                      <p className="text-muted-foreground text-xs mb-4">
-                        {project.location}
-                      </p>
-                      <button
-                        type="button"
-                        onClick={() => {
-                          setSelectedProject(project);
-                          setSelectedImageIndex(0);
-                          setIsGalleryOpen(true);
-                        }}
-                        className="inline-flex items-center justify-center rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90"
-                      >
-                        Open Gallery
-                      </button>
-                    </div>
+                  <div
+                    className="relative overflow-hidden bg-slate-950/5 w-full"
+                    style={{ paddingTop: "75%" }}
+                  >
+                    <Image
+                      src={item.imageSrc}
+                      alt={`${item.project.title} image ${item.imageIndex + 1}`}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
                   </div>
-                </AnimateOnScroll>
-              );
-            })}
+                </button>
+              </AnimateOnScroll>
+            ))}
           </div>
 
           {/* No Results */}
-          {filteredProjects.length === 0 && (
+          {filteredImages.length === 0 && (
             <div className="text-center py-16">
               <p className="text-muted-foreground">
-                No projects found in this category.
+                No images found in this category.
               </p>
+            </div>
+          )}
+
+          {/* Load More — below the grid */}
+          {filteredImages.length > visibleImages.length && (
+            <div className="mt-10 flex justify-center">
+              <AnimateOnScroll
+                animation="fade-up"
+                className="text-center max-w-3xl mx-auto"
+              >
+                <Button
+                  type="button"
+                  onClick={() => setVisibleCount((count) => count + 18)}
+                  className="px-8 py-6 rounded-sm bg-primary text-primary-foreground shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300"
+                >
+                  Load More
+                </Button>
+              </AnimateOnScroll>
             </div>
           )}
         </div>
       </section>
 
-      <Dialog
-        open={isGalleryOpen}
-        onOpenChange={(open) => {
-          setIsGalleryOpen(open);
-          if (!open) {
-            setSelectedProject(null);
-            setGalleryApi(null);
-          }
-        }}
-      >
-        <DialogContent className="max-w-4xl">
-          <DialogHeader>
-            <DialogTitle>
-              {selectedProject?.title ?? "Project Gallery"}
-            </DialogTitle>
-            <DialogDescription>
-              Browse the gallery for this completed project.
-            </DialogDescription>
-          </DialogHeader>
+      <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+        <DialogContent className="max-w-[100vw] max-h-[100vh] w-screen h-screen p-0 overflow-hidden bg-black [&>button]:hidden">
+          <DialogTitle className="sr-only">Project Image Viewer</DialogTitle>
 
-          {selectedProject?.galleryImages && (
-            <>
-              <div className="mt-6 flex items-center justify-between gap-4">
-                <p className="text-sm text-muted-foreground">
-                  {selectedImageIndex + 1} of{" "}
-                  {selectedProject.galleryImages.length} images
-                </p>
-                <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <span className="rounded-full bg-muted/20 px-3 py-1">
-                    Swipe or click arrows
-                  </span>
-                </div>
-              </div>
-              <div className="relative mt-4">
-                <Carousel opts={{ loop: true }} setApi={setGalleryApi}>
-                  <CarouselContent className="h-90">
-                    {selectedProject.galleryImages.map((image, imageIndex) => (
-                      <CarouselItem key={imageIndex}>
-                        <div className="relative h-90 overflow-hidden rounded-2xl bg-background">
-                          <Image
-                            src={image}
-                            alt={`${selectedProject.title} gallery ${imageIndex + 1}`}
-                            fill
-                            className="object-cover"
-                          />
-                        </div>
-                      </CarouselItem>
-                    ))}
-                  </CarouselContent>
-                  <CarouselPrevious />
-                  <CarouselNext />
-                </Carousel>
-              </div>
-              <div className="mt-6 flex gap-3 overflow-x-auto pb-2">
-                {selectedProject.galleryImages.map((image, imageIndex) => (
-                  <button
-                    key={imageIndex}
-                    type="button"
-                    onClick={() => {
-                      setSelectedImageIndex(imageIndex);
-                      galleryApi?.scrollTo(imageIndex);
-                    }}
-                    className={`relative h-20 min-w-30 overflow-hidden rounded-2xl border transition-all duration-200 ${
-                      selectedImageIndex === imageIndex
-                        ? "border-primary shadow-lg shadow-primary/10"
-                        : "border-border"
-                    }`}
-                  >
-                    <Image
-                      src={image}
-                      alt={`${selectedProject.title} thumb ${imageIndex + 1}`}
-                      fill
-                      className="object-cover"
-                    />
-                    <span className="absolute inset-x-0 bottom-0 bg-black/50 text-[11px] text-white text-center py-1">
-                      {imageIndex + 1}
-                    </span>
-                  </button>
-                ))}
-              </div>
-            </>
-          )}
+          <DialogDescription className="sr-only">
+            View project images in fullscreen viewer
+          </DialogDescription>
+
+          <ImageModalViewer
+            images={filteredImages}
+            index={selectedImageIndex}
+            setIndex={setSelectedImageIndex}
+            onClose={() => setIsDialogOpen(false)}
+          />
         </DialogContent>
       </Dialog>
 

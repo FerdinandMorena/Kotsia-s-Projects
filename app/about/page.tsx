@@ -12,63 +12,66 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "About Us | Kotsia's Projects",
+  title: "About the Carpenter | Kotsia's Projects",
   description:
-    "Learn about Kotsia's Projects - your trusted partner in construction and maintenance services with over 10 years of experience.",
+    "Learn about Kotsia, a skilled carpenter with over 10 years of experience specializing in custom woodwork, furniture, and home improvement projects.",
 };
 
 const values = [
   {
     icon: Award,
-    title: "Excellence",
+    title: "Craftsmanship",
     description:
-      "We strive for excellence in every project, never compromising on quality.",
+      "Every piece reflects dedication to traditional woodworking techniques and modern precision.",
   },
   {
     icon: Users,
-    title: "Teamwork",
+    title: "Personal Service",
     description:
-      "Our skilled team works together to deliver outstanding results.",
+      "Direct communication and collaboration to bring your unique vision to life.",
   },
   {
     icon: Clock,
     title: "Reliability",
-    description: "We keep our promises and deliver on time, every time.",
+    description:
+      "Consistent quality and dependable timelines you can count on.",
   },
   {
     icon: Shield,
-    title: "Integrity",
+    title: "Quality Materials",
     description:
-      "Honest communication and transparent pricing are our foundation.",
+      "Only the finest woods and materials to ensure lasting beauty and durability.",
   },
 ];
 
 const milestones = [
   {
     year: "2014",
-    title: "Company Founded",
+    title: "Carpentry Journey Begins",
     description:
-      "Started with a vision to provide quality construction services.",
+      "Started specializing in custom woodwork and furniture making.",
   },
   {
     year: "2016",
-    title: "Team Expansion",
-    description: "Grew our team to 10 skilled professionals.",
+    title: "First Major Projects",
+    description: "Completed custom kitchen cabinetry and home renovations.",
   },
   {
     year: "2019",
-    title: "500 Projects",
-    description: "Celebrated completing 500 successful projects.",
+    title: "500 Custom Pieces",
+    description:
+      "Celebrated creating 500+ custom furniture and woodwork pieces.",
   },
   {
     year: "2022",
-    title: "Service Expansion",
-    description: "Added welding and drainage services to our offerings.",
+    title: "Expanded Services",
+    description: "Added supporting services to complement carpentry projects.",
   },
   {
     year: "2024",
-    title: "Industry Recognition",
-    description: "Recognized as a trusted name in the construction industry.",
+    title: "Established Reputation",
+    description:
+      "Recognized as a trusted carpenter for quality custom woodwork.",
   },
 ];
 
@@ -79,8 +82,8 @@ export default function AboutPage() {
       <section className="relative pt-32 pb-24 min-h-[60vh] flex items-center">
         <div className="absolute inset-0">
           <Image
-            src="/images/hero-about.jpg"
-            alt="Our professional team"
+            src="/images/52.webp"
+            alt="Carpenter designing woodwork with digital tools"
             fill
             className="object-cover"
             priority
@@ -90,15 +93,15 @@ export default function AboutPage() {
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <AnimateOnScroll animation="fade-up" className="max-w-3xl">
             <span className="text-white/80 text-sm font-medium tracking-wider uppercase">
-              About Us
+              About the Carpenter
             </span>
             <h1 className="text-4xl md:text-5xl font-bold text-white mt-3 mb-6 text-balance">
-              Building Dreams Into Reality
+              Crafting Quality Woodwork for Over a Decade
             </h1>
             <p className="text-xl text-white/90 leading-relaxed">
-              For over a decade, Kotsia&apos;s Projects has been the trusted
-              choice for construction and maintenance services, delivering
-              quality craftsmanship that stands the test of time.
+              A passionate carpenter dedicated to bringing craftsmanship and
+              precision to every custom woodwork project, creating pieces that
+              enhance homes and bring lasting value.
             </p>
           </AnimateOnScroll>
         </div>
@@ -128,22 +131,26 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  Founded with a passion for quality craftsmanship,
-                  Kotsia&apos;s Projects began as a small family business
-                  dedicated to providing exceptional construction and
-                  maintenance services to the local community.
+                  My journey as a carpenter began with a deep appreciation for
+                  the beauty and versatility of wood. What started as a passion
+                  for woodworking has evolved into a dedicated career creating
+                  custom furniture, cabinetry, and structural elements that
+                  bring character and functionality to homes.
                 </p>
                 <p>
-                  Over the years, we&apos;ve grown into a full-service
-                  construction company, but we&apos;ve never lost sight of what
-                  made us successful in the first place: attention to detail,
-                  honest communication, and a commitment to exceeding our
-                  clients&apos; expectations.
+                  Over the past decade, I&apos;ve had the privilege of working
+                  on hundreds of projects, from intricate custom furniture
+                  pieces to complete home renovations. Each project teaches me
+                  something new and reinforces my commitment to quality
+                  craftsmanship.
                 </p>
                 <p>
-                  Today, we proudly serve homeowners, businesses, and
-                  contractors across the region, bringing the same dedication
-                  and expertise to every project, no matter the size.
+                  Today, I focus on delivering personalized carpentry services
+                  that reflect my clients&apos; vision while maintaining the
+                  highest standards of precision and durability. Whether
+                  it&apos;s a bespoke dining table or structural woodwork, I
+                  approach every piece with the same attention to detail and
+                  pride in my work.
                 </p>
               </div>
             </AnimateOnScroll>
@@ -161,13 +168,13 @@ export default function AboutPage() {
                   <Target className="w-7 h-7 text-primary" />
                 </div>
                 <h3 className="text-2xl font-bold text-foreground mb-4">
-                  Our Mission
+                  My Mission
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  To provide exceptional construction and maintenance services
-                  that transform our clients&apos; visions into reality, while
-                  maintaining the highest standards of quality, safety, and
-                  professionalism in every project we undertake.
+                  To create exceptional custom woodwork that enhances the beauty
+                  and functionality of homes, using traditional craftsmanship
+                  techniques combined with modern precision to deliver pieces
+                  that bring joy and lasting value to my clients.
                 </p>
               </div>
             </AnimateOnScroll>
@@ -178,13 +185,13 @@ export default function AboutPage() {
                   <Eye className="w-7 h-7 text-primary" />
                 </div>
                 <h3 className="text-2xl font-bold text-foreground mb-4">
-                  Our Vision
+                  My Vision
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  To be the most trusted name in construction and maintenance
-                  services, known for our unwavering commitment to excellence,
-                  innovative solutions, and lasting relationships with our
-                  clients and community.
+                  To be the most trusted carpenter in the community, known for
+                  creating custom woodwork that combines timeless craftsmanship
+                  with innovative design, helping homeowners achieve their dream
+                  spaces with quality that endures.
                 </p>
               </div>
             </AnimateOnScroll>

@@ -4,21 +4,27 @@ import { Award, Clock, Shield, Users } from "lucide-react";
 const reasons = [
   {
     icon: Award,
-    title: "Quality Workmanship",
+    title: "Skilled Workmanship",
     description:
-      "We take pride in delivering superior quality in every project, using the best materials and techniques.",
+      "Years of carpentry experience ensuring every piece is crafted with precision and expertise.",
   },
   {
     icon: Clock,
-    title: "On-Time Delivery",
+    title: "Reliable Service",
     description:
-      "We respect your time and ensure all projects are completed within agreed timelines.",
+      "Dependable scheduling and completion with clear communication throughout your project.",
   },
   {
     icon: Users,
-    title: "Expert Team",
+    title: "Attention to Detail",
     description:
-      "Our skilled professionals bring years of experience and dedication to every job.",
+      "Meticulous focus on quality finishes and custom details that make your woodwork special.",
+  },
+  {
+    icon: Shield,
+    title: "Affordable Pricing",
+    description:
+      "Competitive rates for premium craftsmanship without compromising on quality or materials.",
   },
 ];
 
@@ -31,11 +37,12 @@ export function WhyChooseUs() {
             Why Choose Us
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-3 mb-4 text-balance">
-            The Kotsia&apos;s Difference
+            Why Choose Our Carpentry Services
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            We stand apart through our unwavering commitment to excellence,
-            reliability, and customer satisfaction.
+            Experience the difference that skilled craftsmanship and personal
+            attention bring to your custom woodwork and home improvement
+            projects.
           </p>
         </AnimateOnScroll>
 

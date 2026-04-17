@@ -4,9 +4,9 @@ import { Button } from "@/components/ui/button";
 import { CheckCircle, ArrowRight } from "lucide-react";
 
 const highlights = [
-  "Over 10 years of industry experience",
-  "Licensed and fully insured professionals",
-  "Commitment to quality and safety",
+  "Over 10 years of carpentry experience",
+  "Specialized in custom woodwork and home improvement",
+  "Attention to detail in every piece of craftsmanship",
   "Transparent pricing with no hidden costs",
 ];
 
@@ -21,13 +21,15 @@ export function AboutPreview() {
               About Us
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-3 mb-6 text-balance">
-              Building Excellence for Over a Decade
+              Expert Carpentry with a Personal Touch
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-8">
-              Kotsia&apos;s Projects is a trusted name in construction and
-              maintenance services. We combine traditional craftsmanship with
-              modern techniques to deliver exceptional results that exceed
-              expectations.
+              As a skilled carpenter with over a decade of experience, I
+              specialize in custom woodwork and home improvement projects. Every
+              piece I create reflects my passion for craftsmanship, attention to
+              detail, and commitment to quality that goes beyond just building –
+              it&apos;s about creating something that lasts and brings joy to
+              your home.
             </p>
 
             <ul className="space-y-4 mb-8">

@@ -1,6 +1,6 @@
-import Link from "next/link"
-import { AnimateOnScroll } from "@/components/animate-on-scroll"
-import { Button } from "@/components/ui/button"
+import Link from "next/link";
+import { AnimateOnScroll } from "@/components/animate-on-scroll";
+import { Button } from "@/components/ui/button";
 import {
   Hammer,
   Grid3X3,
@@ -9,46 +9,43 @@ import {
   Droplets,
   Wrench,
   ArrowRight,
-} from "lucide-react"
+} from "lucide-react";
 
 const services = [
   {
     icon: Hammer,
     title: "Carpentry",
     description:
-      "Custom woodwork, framing, and cabinetry crafted with precision and care.",
+      "Custom furniture, built-in cabinetry, doors, windows, and structural woodwork crafted with precision and care.",
   },
   {
     icon: Grid3X3,
     title: "Tiling",
     description:
-      "Expert tile installation for floors, walls, and backsplashes with flawless finishes.",
+      "Professional tile installation for floors, walls, and backsplashes.",
   },
   {
     icon: Paintbrush,
     title: "Painting",
     description:
-      "Interior and exterior painting services that transform your spaces beautifully.",
+      "Interior and exterior painting to complement your woodwork projects.",
   },
   {
     icon: Layers,
     title: "RhinoLite Plastering",
-    description:
-      "Smooth, durable plaster finishes for walls and ceilings that last.",
+    description: "Smooth plaster finishes for walls and ceilings.",
   },
   {
     icon: Droplets,
     title: "Stormwater Drainage",
-    description:
-      "Effective drainage solutions to protect your property from water damage.",
+    description: "Effective drainage solutions to protect your property.",
   },
   {
     icon: Wrench,
     title: "Welding",
-    description:
-      "Professional welding services for structural and decorative metalwork.",
+    description: "Metalwork and structural repairs as needed.",
   },
-]
+];
 
 export function ServicesPreview() {
   return (
@@ -59,11 +56,12 @@ export function ServicesPreview() {
             What We Do
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-3 mb-4 text-balance">
-            Our Services
+            Carpentry & Home Improvement Services
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Comprehensive construction and maintenance solutions tailored to meet
-            your specific needs with the highest standards of quality.
+            Specializing in custom woodwork with supporting services to complete
+            your home improvement projects with the highest standards of
+            craftsmanship.
           </p>
         </AnimateOnScroll>
 
@@ -99,5 +97,5 @@ export function ServicesPreview() {
         </AnimateOnScroll>
       </div>
     </section>
-  )
+  );
 }

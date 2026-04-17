@@ -40,8 +40,8 @@ export default function ContactPage() {
       <section className="relative pt-32 pb-24 min-h-[60vh] flex items-center">
         <div className="absolute inset-0">
           <Image
-            src="/images/hero-contact.jpg"
-            alt="Consultation meeting"
+            src="/images/47.webp"
+            alt="Carpenter's hands working with wood"
             fill
             className="object-cover"
             priority

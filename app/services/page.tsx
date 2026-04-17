@@ -6,86 +6,84 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Services | Kotsia's Projects",
+  title: "Carpentry & Home Improvement Services | Kotsia's Projects",
   description:
-    "Explore our comprehensive construction and maintenance services including carpentry, tiling, painting, RhinoLite plastering, stormwater drainage, and welding.",
+    "Expert carpentry services including custom furniture, built-in cabinetry, doors, windows, and structural woodwork. Supporting services for complete home improvement projects.",
 };
 
 const services = [
   {
-    imageSrc: "/images/service-carpentry.jpg",
+    imageSrc: "/images/68.webp",
     title: "Carpentry",
     description:
-      "From custom furniture to structural framing, our skilled carpenters bring precision and artistry to every woodworking project.",
+      "As a skilled carpenter specializing in custom woodwork, I bring precision and artistry to every project. From bespoke furniture pieces to complete home renovations, my craftsmanship transforms spaces with quality that stands the test of time.",
     features: [
-      "Custom cabinetry and shelving",
-      "Door and window installation",
-      "Deck and patio construction",
-      "Structural framing",
+      "Custom furniture design and construction",
+      "Built-in cupboards and cabinetry",
+      "Doors and window frames",
+      "Roofing timber and structural woodwork",
       "Wood repairs and restoration",
+      "Deck and patio construction",
+      "Interior trim and moldings",
+      "Kitchen and bathroom vanities",
     ],
   },
   {
-    imageSrc: "/images/service-tiling.jpg",
+    imageSrc: "/images/75.webp",
     title: "Tiling",
     description:
-      "Transform your spaces with expertly installed tiles. We handle everything from bathroom renovations to large-scale commercial flooring.",
+      "Professional tile installation services to complement your carpentry and home improvement projects.",
     features: [
       "Floor tile installation",
       "Wall and backsplash tiling",
       "Bathroom and shower tiling",
-      "Outdoor and patio tiles",
       "Tile repair and replacement",
     ],
   },
   {
-    imageSrc: "/images/service-painting.jpg",
+    imageSrc: "/images/67.webppp",
     title: "Painting",
     description:
-      "Give your property a fresh look with our professional painting services. We use premium paints and techniques for lasting results.",
+      "Quality painting services to enhance and protect your woodwork and home improvements.",
     features: [
       "Interior wall painting",
       "Exterior house painting",
-      "Commercial painting",
       "Specialty finishes",
       "Surface preparation and repair",
     ],
   },
   {
-    imageSrc: "/images/service-plastering.jpg",
+    imageSrc: "/images/74.webp",
     title: "RhinoLite Plastering",
     description:
-      "Achieve smooth, durable wall finishes with our RhinoLite plastering services. Perfect for both new construction and renovation projects.",
+      "Smooth, durable wall finishes to prepare surfaces for your custom woodwork installations.",
     features: [
       "Wall plastering",
       "Ceiling finishes",
       "Skim coating",
       "Crack repair",
-      "Textured finishes",
     ],
   },
   {
-    imageSrc: "/images/service-drainage.jpg",
+    imageSrc: "/images/70.webp",
     title: "Stormwater Drainage",
     description:
-      "Protect your property from water damage with our effective drainage solutions designed to handle even the heaviest rainfall.",
+      "Effective drainage solutions to protect your property and preserve your woodwork investments.",
     features: [
       "Drainage system design",
-      "French drain installation",
       "Gutter and downspout systems",
       "Grading and sloping",
       "Drainage maintenance",
     ],
   },
   {
-    imageSrc: "/images/service-welding.jpg",
+    imageSrc: "/images/76.webp",
     title: "Welding",
     description:
-      "Our certified welders deliver high-quality metalwork for both structural and decorative applications across residential and commercial projects.",
+      "Metal fabrication and repairs to support your carpentry and construction projects.",
     features: [
       "Structural steel welding",
       "Security gates and burglar bars",
-      "Balustrades and railings",
       "Custom metal fabrication",
       "Repair and maintenance",
     ],
@@ -99,8 +97,8 @@ export default function ServicesPage() {
       <section className="relative pt-32 pb-24 min-h-[60vh] flex items-center">
         <div className="absolute inset-0">
           <Image
-            src="/images/hero-services.jpg"
-            alt="Craftsman at work"
+            src="/images/48.webp"
+            alt="Carpenter sawing wood with precision tools"
             fill
             className="object-cover"
             priority
@@ -110,14 +108,15 @@ export default function ServicesPage() {
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <AnimateOnScroll animation="fade-up" className="max-w-3xl">
             <span className="text-white/80 text-sm font-medium tracking-wider uppercase">
-              Our Services
+              Carpentry Services
             </span>
             <h1 className="text-4xl md:text-5xl font-bold text-white mt-3 mb-6 text-balance">
-              Comprehensive Construction Solutions
+              Custom Woodwork & Home Improvement
             </h1>
             <p className="text-xl text-white/90 leading-relaxed">
-              From carpentry to welding, we offer a full range of professional
-              services to meet all your construction and maintenance needs.
+              Specializing in precision carpentry with supporting services to
+              bring your vision to life. From custom furniture to structural
+              repairs, we deliver craftsmanship that lasts.
             </p>
           </AnimateOnScroll>
         </div>
@@ -196,12 +195,12 @@ export default function ServicesPage() {
             className="text-center max-w-3xl mx-auto"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-6 text-balance">
-              Need a Custom Solution?
+              Need Custom Woodwork?
             </h2>
             <p className="text-primary-foreground/80 text-lg mb-8 leading-relaxed">
-              Every project is unique. Contact us to discuss your specific
-              requirements and we&apos;ll create a tailored solution that fits
-              your needs and budget.
+              Every project is unique. Contact me to discuss your custom
+              carpentry requirements and let&apos;s create something special
+              together.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button

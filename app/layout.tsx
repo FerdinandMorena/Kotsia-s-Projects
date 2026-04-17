@@ -8,13 +8,14 @@ import { Footer } from "@/components/footer";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
-  title: "Kotsia's Projects | Construction & Maintenance Services",
+  title: "Kotsia's Projects | Carpentry & Home Maintenance Services",
   description:
-    "Professional construction and maintenance services including carpentry, tiling, painting, RhinoLite plastering, stormwater drainage, and welding. Quality workmanship you can trust.",
+    "Skilled carpenter offering professional carpentry, tiling, painting, RhinoLite plastering, stormwater drainage, and welding services. Quality workmanship you can trust.",
   keywords: [
-    "construction",
-    "maintenance",
     "carpentry",
+    "carpenter",
+    "woodwork",
+    "home maintenance",
     "tiling",
     "painting",
     "plastering",
