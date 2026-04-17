@@ -112,20 +112,9 @@ export function Footer() {
               &copy; {new Date().getFullYear()} Kotsia&apos;s Projects. All
               rights reserved.
             </p>
-            <div className="flex items-center gap-6">
-              <Link
-                href="/contact"
-                className="text-muted-foreground text-sm hover:text-primary transition-colors"
-              >
-                Privacy Policy
-              </Link>
-              <Link
-                href="/contact"
-                className="text-muted-foreground text-sm hover:text-primary transition-colors"
-              >
-                Terms of Service
-              </Link>
-            </div>
+            <p className="text-muted-foreground text-sm">
+              Developed by Ferdinand Morena
+            </p>
           </div>
         </div>
       </div>
