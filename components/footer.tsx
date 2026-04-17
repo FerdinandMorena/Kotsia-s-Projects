@@ -109,7 +109,7 @@ export function Footer() {
         <div className="container mx-auto px-4 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-muted-foreground text-sm">
-              &copy; {new Date().getFullYear()} Kotsia&apos;s Projects. All
+              &copy; {new Date().getFullYear()} - Kotsia&apos;s Projects. All
               rights reserved.
             </p>
             <p className="text-muted-foreground text-sm">
