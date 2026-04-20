@@ -1,4 +1,18 @@
 import { limpopoCities, gautengCities } from "@/lib/seo";
+import type { MetadataRoute } from "next";
+
+export const siteServices: {
+  slug: string;
+  changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"];
+  priority: number;
+}[] = [
+  { slug: "carpentry", changeFrequency: "weekly", priority: 1.0 },
+  { slug: "tiling", changeFrequency: "monthly", priority: 0.85 },
+  { slug: "painting", changeFrequency: "monthly", priority: 0.85 },
+  { slug: "rhinolite-plastering", changeFrequency: "monthly", priority: 0.85 },
+  { slug: "stormwater-drainage", changeFrequency: "monthly", priority: 0.85 },
+  { slug: "welding", changeFrequency: "monthly", priority: 0.85 },
+];
 
 export const siteConfig = {
   name: "Kotsia's Projects",
