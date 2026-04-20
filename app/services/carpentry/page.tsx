@@ -46,7 +46,7 @@ const carpentryServices = [
   {
     title: "Kitchen Cupboards & Built-In Cabinetry",
     description:
-      "Custom kitchen cupboard installation is one of our most in-demand carpentry services. We design and build fitted kitchen units that maximize storage, complement your aesthetic, and are built to last decades. From modern handleless designs in Sandton to traditional family kitchens in Polokwane, our kitchen carpentry is tailored to your exact requirements and budget.",
+      "Custom kitchen cupboard installation is one of our most in-demand carpentry services. We design and build fitted kitchen units that maximize storage, complement your aesthetic, and are built to last 8 yearss. From modern handleless designs in Sandton to traditional family kitchens in Polokwane, our kitchen carpentry is tailored to your exact requirements and budget.",
     features: [
       "Custom kitchen cupboard design and installation",
       "Built-in pantry and storage units",

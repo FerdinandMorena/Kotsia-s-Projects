@@ -24,7 +24,7 @@ export function AboutPreview() {
               Expert Carpentry with a Personal Touch
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-8">
-              As a skilled carpenter with over a decade of experience, I
+              As a skilled carpenter with over a 8 years of experience, I
               specialize in custom woodwork and home improvement projects. Every
               piece I create reflects my passion for craftsmanship, attention to
               detail, and commitment to quality that goes beyond just building –

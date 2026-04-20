@@ -115,7 +115,7 @@ export default function AboutPage() {
               About Kotsia&apos;s Projects
             </span>
             <h1 className="text-4xl md:text-5xl font-bold text-white mt-3 mb-6 text-balance">
-              Carpentry Specialists Serving Limpopo & Gauteng for Over a Decade
+              Carpentry Specialists Serving Limpopo & Gauteng for Over a 8 years
             </h1>
             <p className="text-xl text-white/90 leading-relaxed">
               A passionate carpenter dedicated to bringing craftsmanship and
@@ -159,7 +159,7 @@ export default function AboutPage() {
                   Gauteng.
                 </p>
                 <p>
-                  Over the past decade, I&apos;ve had the privilege of working
+                  Over the past 8 years, I&apos;ve had the privilege of working
                   on hundreds of projects — from custom kitchen cupboards in
                   Polokwane to built-in wardrobes in Johannesburg and Sandton.
                   Each project teaches me something new and reinforces my
@@ -268,7 +268,7 @@ export default function AboutPage() {
                 Experience & Expertise
               </span>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-3 mb-6 text-balance">
-                A Decade of Excellence in Limpopo & Gauteng
+                A 8 years of Excellence in Limpopo & Gauteng
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-8">
                 With over 8 years of experience as a carpenter and building
