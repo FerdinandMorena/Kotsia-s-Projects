@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { AnimateOnScroll } from "@/components/animate-on-scroll";
@@ -256,14 +256,11 @@ export default function ProjectsPage() {
     onClose: () => void;
   }) {
     const current = images[index];
+    const swipeStartX = useRef<number | null>(null);
+    const SWIPE_THRESHOLD = 50;
 
-    const next = () => {
-      setIndex((index + 1) % images.length);
-    };
-
-    const prev = () => {
-      setIndex((index - 1 + images.length) % images.length);
-    };
+    const next = () => setIndex((index + 1) % images.length);
+    const prev = () => setIndex((index - 1 + images.length) % images.length);
 
     useEffect(() => {
       const handleKey = (e: KeyboardEvent) => {
@@ -276,15 +273,52 @@ export default function ProjectsPage() {
       return () => window.removeEventListener("keydown", handleKey);
     }, [index]);
 
+    const isDragging = useRef(false);
+
+    const handlePointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
+      // Only track primary button (left-click / touch)
+      if (e.button !== 0 && e.pointerType === "mouse") return;
+      // Don't interfere with button clicks
+      if ((e.target as HTMLElement).closest("button")) return;
+      swipeStartX.current = e.clientX;
+      isDragging.current = false;
+      // Capture pointer so pointerup always fires on this element
+      e.currentTarget.setPointerCapture(e.pointerId);
+    };
+
+    const handlePointerMove = (e: React.PointerEvent) => {
+      if (swipeStartX.current === null) return;
+      if (Math.abs(e.clientX - swipeStartX.current) > 5) {
+        isDragging.current = true;
+      }
+    };
+
+    const handlePointerUp = (e: React.PointerEvent) => {
+      if (swipeStartX.current === null) return;
+      const delta = swipeStartX.current - e.clientX;
+      if (isDragging.current && Math.abs(delta) >= SWIPE_THRESHOLD) {
+        delta > 0 ? next() : prev();
+      }
+      swipeStartX.current = null;
+      isDragging.current = false;
+    };
+
     return (
-      <div className="relative w-full h-screen bg-white flex items-center justify-center">
+      <div
+        className="relative w-full h-screen bg-white flex items-center justify-center touch-pan-y select-none cursor-grab active:cursor-grabbing"
+        onPointerDown={handlePointerDown}
+        onPointerMove={handlePointerMove}
+        onPointerUp={handlePointerUp}
+        onDragStart={(e) => e.preventDefault()}
+      >
         {/* Image */}
-        <div className="relative w-full h-full flex items-center justify-center">
+        <div className="relative w-full h-full flex items-center justify-center pointer-events-none">
           {current && (
             <Image
               src={current.imageSrc}
               alt="Project image"
               fill
+              draggable={false}
               className="object-contain p-6"
               priority
             />
@@ -455,7 +489,7 @@ export default function ProjectsPage() {
       </section>
 
       <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-        <DialogContent className="max-w-[100vw] max-h-[100vh] w-screen h-screen p-0 overflow-hidden bg-black [&>button]:hidden">
+        <DialogContent className="max-w-[100vw] max-h-[100vh] w-screen h-screen mt-2 p-0 overflow-hidden bg-black [&>button]:hidden">
           <DialogTitle className="sr-only">Project Image Viewer</DialogTitle>
 
           <DialogDescription className="sr-only">
