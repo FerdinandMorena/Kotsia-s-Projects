@@ -3,90 +3,115 @@ import Link from "next/link";
 import Image from "next/image";
 import { AnimateOnScroll } from "@/components/animate-on-scroll";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle } from "lucide-react";
+import { ArrowRight, CheckCircle, Star } from "lucide-react";
+import { siteConfig } from "@/lib/site-config";
+import { servicesPageKeywords } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Carpentry & Home Improvement Services | Kotsia's Projects",
+  title:
+    "Carpentry & Building Services in Limpopo & Gauteng | Kotsia's Projects",
   description:
-    "Expert carpentry services including custom furniture, built-in cabinetry, doors, windows, and structural woodwork. Supporting services for complete home improvement projects.",
+    "Professional carpentry and building services in Limpopo & Gauteng. Custom woodwork, tiling, RhinoLite plastering, stormwater drainage, and welding. Serving Polokwane, Johannesburg, Pretoria, Sandton, Centurion & more.",
+  keywords: servicesPageKeywords,
+  alternates: {
+    canonical: "/services",
+  },
+  openGraph: {
+    title: "Carpentry & Building Services in Limpopo & Gauteng | Kotsia's Projects",
+    description:
+      "Full range of carpentry and building services across Limpopo & Gauteng. Carpentry is our primary specialty, supported by tiling, plastering, drainage, and welding.",
+    url: `${siteConfig.url}/services`,
+    images: [{ url: `${siteConfig.url}/images/48.webp`, alt: "Carpentry and building services in Limpopo and Gauteng" }],
+  },
 };
 
 const services = [
   {
     imageSrc: "/images/68.webp",
     title: "Carpentry",
+    badge: "Primary Service",
+    href: "/services/carpentry",
     description:
-      "As a skilled carpenter specializing in custom woodwork, I bring precision and artistry to every project. From bespoke furniture pieces to complete home renovations, my craftsmanship transforms spaces with quality that stands the test of time.",
+      "Our core specialty. We deliver precision custom woodwork across Limpopo and Gauteng — from kitchen cupboards and built-in wardrobes to doors, frames, roofing structures, and bespoke furniture.",
     features: [
-      "Custom furniture design and construction",
-      "Built-in cupboards and cabinetry",
-      "Doors and window frames",
-      "Roofing timber and structural woodwork",
+      "Custom kitchen cupboards and cabinetry",
+      "Built-in wardrobes and bedroom units",
+      "Doors, frames, and structural woodwork",
+      "Roofing timber and trusses",
       "Wood repairs and restoration",
-      "Deck and patio construction",
-      "Interior trim and moldings",
-      "Kitchen and bathroom vanities",
+      "Custom furniture and woodwork",
     ],
+    isPrimary: true,
   },
   {
     imageSrc: "/images/75.webp",
     title: "Tiling",
+    href: "/services/tiling",
     description:
-      "Professional tile installation services to complement your carpentry and home improvement projects.",
+      "Professional tile installation services for floors, walls, and bathrooms across Limpopo and Gauteng. We work with all tile types and ensure a lasting, quality finish.",
     features: [
       "Floor tile installation",
-      "Wall and backsplash tiling",
       "Bathroom and shower tiling",
+      "Wall and backsplash tiling",
       "Tile repair and replacement",
     ],
+    isPrimary: false,
   },
   {
-    imageSrc: "/images/67.webppp",
+    imageSrc: "/images/67.webp",
     title: "Painting",
+    href: "/services",
     description:
-      "Quality painting services to enhance and protect your woodwork and home improvements.",
+      "Quality interior and exterior painting services to enhance and protect your woodwork and home improvements.",
     features: [
       "Interior wall painting",
       "Exterior house painting",
       "Specialty finishes",
       "Surface preparation and repair",
     ],
+    isPrimary: false,
   },
   {
     imageSrc: "/images/74.webp",
     title: "RhinoLite Plastering",
+    href: "/services/rhinolite-plastering",
     description:
-      "Smooth, durable wall finishes to prepare surfaces for your custom woodwork installations.",
+      "Smooth, durable RhinoLite wall and ceiling finishes across Limpopo and Gauteng — perfect preparation for painting or custom woodwork installations.",
     features: [
-      "Wall plastering",
+      "Interior wall plastering",
       "Ceiling finishes",
       "Skim coating",
-      "Crack repair",
+      "Crack repair and patching",
     ],
+    isPrimary: false,
   },
   {
     imageSrc: "/images/70.webp",
     title: "Stormwater Drainage",
+    href: "/services/stormwater-drainage",
     description:
-      "Effective drainage solutions to protect your property and preserve your woodwork investments.",
+      "Effective stormwater drainage solutions that protect your property from water damage across Limpopo and Gauteng.",
     features: [
-      "Drainage system design",
-      "Gutter and downspout systems",
-      "Grading and sloping",
-      "Drainage maintenance",
+      "Drainage system design and installation",
+      "Gutter and downpipe systems",
+      "French drain installation",
+      "Drainage maintenance and repairs",
     ],
+    isPrimary: false,
   },
   {
     imageSrc: "/images/76.webp",
     title: "Welding",
+    href: "/services/welding",
     description:
-      "Metal fabrication and repairs to support your carpentry and construction projects.",
+      "Professional welding and steel fabrication for security, structural, and custom metalwork projects in Limpopo and Gauteng.",
     features: [
-      "Structural steel welding",
       "Security gates and burglar bars",
+      "Structural steel welding",
       "Custom metal fabrication",
-      "Repair and maintenance",
+      "Carports and shade structures",
     ],
+    isPrimary: false,
   },
 ];
 
@@ -98,7 +123,7 @@ export default function ServicesPage() {
         <div className="absolute inset-0">
           <Image
             src="/images/48.webp"
-            alt="Carpenter sawing wood with precision tools"
+            alt="Professional carpentry and building services in Limpopo and Gauteng"
             fill
             className="object-cover"
             priority
@@ -108,15 +133,15 @@ export default function ServicesPage() {
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <AnimateOnScroll animation="fade-up" className="max-w-3xl">
             <span className="text-white/80 text-sm font-medium tracking-wider uppercase">
-              Carpentry Services
+              All Services — Limpopo & Gauteng
             </span>
             <h1 className="text-4xl md:text-5xl font-bold text-white mt-3 mb-6 text-balance">
-              Custom Woodwork & Home Improvement
+              Carpentry & Building Services in Limpopo & Gauteng
             </h1>
             <p className="text-xl text-white/90 leading-relaxed">
-              Specializing in precision carpentry with supporting services to
-              bring your vision to life. From custom furniture to structural
-              repairs, we deliver craftsmanship that lasts.
+              Carpentry is our primary specialty, backed by tiling, plastering,
+              stormwater drainage, and welding — delivering complete home
+              improvement solutions across both provinces.
             </p>
           </AnimateOnScroll>
         </div>
@@ -133,17 +158,17 @@ export default function ServicesPage() {
               >
                 <div
                   className={`grid lg:grid-cols-2 gap-12 items-center ${
-                    index % 2 === 1 ? "lg:flex-row-reverse" : ""
+                    index % 2 === 1 ? "" : ""
                   }`}
                 >
                   <div className={index % 2 === 1 ? "lg:order-2" : ""}>
-                    <div className="relative w-16 h-16 rounded-2xl overflow-hidden mb-6">
-                      <Image
-                        src={service.imageSrc}
-                        alt={`${service.title} service`}
-                        fill
-                        className="object-cover"
-                      />
+                    <div className="flex items-center gap-3 mb-4">
+                      {service.isPrimary && (
+                        <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-primary text-primary-foreground text-xs font-semibold rounded-full">
+                          <Star className="w-3 h-3" />
+                          {service.badge}
+                        </span>
+                      )}
                     </div>
                     <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
                       {service.title}
@@ -159,20 +184,31 @@ export default function ServicesPage() {
                         </li>
                       ))}
                     </ul>
-                    <Button asChild>
-                      <Link href="/contact">
-                        Request a Quote
-                        <ArrowRight className="ml-2 h-4 w-4" />
-                      </Link>
-                    </Button>
+                    <div className="flex flex-wrap gap-3">
+                      {service.href !== "/services" && (
+                        <Button asChild variant="outline">
+                          <Link href={service.href}>
+                            View {service.title} Details
+                            <ArrowRight className="ml-2 h-4 w-4" />
+                          </Link>
+                        </Button>
+                      )}
+                      <Button asChild>
+                        <Link href="/contact">
+                          Request a Quote
+                          <ArrowRight className="ml-2 h-4 w-4" />
+                        </Link>
+                      </Button>
+                    </div>
                   </div>
                   <div className={index % 2 === 1 ? "lg:order-1" : ""}>
                     <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br from-primary/20 to-primary/5">
                       <Image
                         src={service.imageSrc}
-                        alt={`${service.title} service image`}
+                        alt={`${service.title} services in Limpopo and Gauteng`}
                         fill
                         className="object-cover"
+                        loading={index === 0 ? "eager" : "lazy"}
                       />
                     </div>
                   </div>
@@ -195,12 +231,11 @@ export default function ServicesPage() {
             className="text-center max-w-3xl mx-auto"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-6 text-balance">
-              Need Custom Woodwork?
+              Need a Carpenter in Limpopo or Gauteng?
             </h2>
             <p className="text-primary-foreground/80 text-lg mb-8 leading-relaxed">
-              Every project is unique. Contact me to discuss your custom
-              carpentry requirements and let&apos;s create something special
-              together.
+              Every project is unique. Contact us to discuss your carpentry or
+              building requirements and get a free, no-obligation quote.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button
@@ -210,7 +245,7 @@ export default function ServicesPage() {
                 className="text-secondary-foreground"
               >
                 <Link href="/contact">
-                  Get in Touch
+                  Get a Free Quote
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>

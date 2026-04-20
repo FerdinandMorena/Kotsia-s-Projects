@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { CheckCircle, ArrowRight } from "lucide-react";
 
 const highlights = [
-  "Over 10 years of carpentry experience",
+  "Over 8 years of carpentry experience",
   "Specialized in custom woodwork and home improvement",
   "Attention to detail in every piece of craftsmanship",
   "Transparent pricing with no hidden costs",
