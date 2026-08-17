@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { Fragment, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import gsap from "gsap";
@@ -91,13 +91,15 @@ export function HeroSection() {
             ref={headlineRef}
             className="font-serif font-semibold tracking-tight text-4xl md:text-6xl lg:text-[4.5rem] leading-[1.1] md:leading-[1.15] text-white mb-8 text-balance [text-shadow:0_2px_18px_rgba(0,0,0,0.45)]"
           >
+            {/* Each word is masked for the reveal, but the spaces between them
+                stay real text nodes so the accessible name and search-engine
+                text extraction read as a normal sentence. */}
             {HEADLINE.split(" ").map((word, i) => (
-              <span
-                key={i}
-                className="inline-block overflow-hidden mr-[0.28em] align-bottom"
-              >
-                <span className="word-inner inline-block">{word}</span>
-              </span>
+              <Fragment key={i}>
+                <span className="inline-block overflow-hidden align-bottom">
+                  <span className="word-inner inline-block">{word}</span>
+                </span>{" "}
+              </Fragment>
             ))}
           </h1>
 
