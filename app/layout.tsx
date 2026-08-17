@@ -7,6 +7,18 @@ import { Footer } from "@/components/footer";
 import { LocalBusinessJsonLd } from "@/components/json-ld";
 import { siteConfig } from "@/lib/site-config";
 import { allKeywords } from "@/lib/seo";
+import { Fraunces, Manrope } from "next/font/google";
+
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  variable: "--font-serif",
+  axes: ["opsz", "SOFT", "WONK"],
+});
+
+const manrope = Manrope({
+  subsets: ["latin"],
+  variable: "--font-sans",
+});
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
@@ -87,7 +99,7 @@ export default function RootLayout({
   return (
     <html lang="en-ZA">
       <body
-        className={`${inter.variable} font-sans antialiased bg-background text-foreground`}
+        className={`${fraunces.variable} ${manrope.variable} font-sans antialiased bg-background text-foreground`}
       >
         <LocalBusinessJsonLd />
         <Navbar />

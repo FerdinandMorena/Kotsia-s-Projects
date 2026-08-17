@@ -1,42 +1,65 @@
-@import 'tailwindcss';
-@import 'tw-animate-css';
+@import "tailwindcss";
+@import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  /* Main Backgrounds */
+  --background: 35 22% 8%; /* #1B1612 Rich Espresso */
+  --foreground: 40 28% 95%; /* #F7F4EE Ivory */
+
+  /* Cards */
+  --card: 28 20% 12%; /* #2A211B Dark Walnut */
+  --card-foreground: 40 28% 95%;
+
+  /* Popovers */
+  --popover: 28 20% 12%;
+  --popover-foreground: 40 28% 95%;
+
+  /* Brand */
+  --primary: 33 58% 41% /* #C8A45D Premium Gold */ --primary-foreground: 40 28%
+    95%;
+
+  --secondary: 28 38% 46%; /* #A87544 Warm Oak */
+  --secondary-foreground: 40 28% 95%;
+
+  /* Neutral */
+  --muted: 30 15% 16%;
+  --muted-foreground: 35 12% 72%;
+
+  /* Accent */
+  --accent: 33 58% 41%; /* #A46A2C Rich Golden Oak */
+  --accent-foreground: 40 28% 95%; /* #F7F4EE Ivory */
+
+  /* Utility */
+  --destructive: 0 75% 55%;
+  --destructive-foreground: 40 28% 95%;
+
+  --border: 30 18% 22%; /* Warm Border */
+  --input: 30 18% 22%;
+  --ring: 38 47% 58%;
+
+  /* Charts */
+  --chart-1: 38 47% 58%;
+  --chart-2: 28 38% 46%;
+  --chart-3: 104 12% 28%;
+  --chart-4: 30 20% 72%;
+  --chart-5: 20 30% 55%;
+
+  --radius: 1rem;
+
+  /* Sidebar */
+  --sidebar: 28 20% 10%;
+  --sidebar-foreground: 40 28% 95%;
+
+  --sidebar-primary: 38 47% 58%;
+  --sidebar-primary-foreground: 35 22% 8%;
+
+  --sidebar-accent: 30 15% 16%;
+  --sidebar-accent-foreground: 40 28% 95%;
+
+  --sidebar-border: 30 18% 22%;
+  --sidebar-ring: 38 47% 58%;
 }
 
 .dark {
@@ -75,8 +98,8 @@
 }
 
 @theme inline {
-  --font-sans: 'Geist', 'Geist Fallback';
-  --font-mono: 'Geist Mono', 'Geist Mono Fallback';
+  --font-sans: "Geist", "Geist Fallback";
+  --font-mono: "Geist Mono", "Geist Mono Fallback";
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);

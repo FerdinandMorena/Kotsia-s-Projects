@@ -42,7 +42,7 @@ export function Navbar() {
         <nav className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="group" aria-label="Home">
-            <div className="w-48 h-16 overflow-hidden group-hover:scale-105 transition-transform">
+            <div className="w-64 h-28 overflow-hidden transition-transform group-hover:scale-105">
               <Image
                 src="/Thabo%27s%20Logo.png"
                 alt="Kotsia's Projects logo"
@@ -60,36 +60,29 @@ export function Navbar() {
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  "text-sm font-medium transition-colors relative",
+                  "relative text-md font-lg tracking-wide transition-colors",
                   isScrolled
                     ? pathname === link.href
                       ? "text-primary"
                       : "text-muted-foreground hover:text-primary"
                     : pathname === link.href
                       ? "text-white"
-                      : "text-white/80 hover:text-white",
+                      : "text-white hover:text-accent",
                 )}
               >
                 {link.label}
                 {pathname === link.href && (
-                  <span
-                    className={cn(
-                      "absolute -bottom-1 left-0 right-0 h-0.5 rounded-full",
-                      isScrolled ? "bg-primary" : "bg-white",
-                    )}
-                  />
+                  <span className="absolute -bottom-1.5 left-0 right-0 h-px bg-accent" />
                 )}
               </Link>
             ))}
           </div>
 
           {/* CTA Button */}
-          <div className="hidden md:block">
+          <div className="hidden md:block md:ml-4">
             <Button
               asChild
-              className={cn(
-                !isScrolled && "bg-white text-foreground hover:bg-white/90",
-              )}
+              className="bg-accent text-accent-foreground font-semibold hover:bg-accent/90"
             >
               <Link href="/contact">Get a Quote</Link>
             </Button>
@@ -102,7 +95,7 @@ export function Navbar() {
               "md:hidden p-2 transition-colors",
               isScrolled
                 ? "text-foreground hover:text-primary"
-                : "text-white hover:text-white/80",
+                : "text-white hover:text-accent",
             )}
             aria-label="Toggle menu"
           >
@@ -134,7 +127,10 @@ export function Navbar() {
               {link.label}
             </Link>
           ))}
-          <Button asChild className="mt-2">
+          <Button
+            asChild
+            className="mt-2 bg-accent text-accent-foreground font-semibold hover:bg-accent/90"
+          >
             <Link href="/contact" onClick={() => setIsOpen(false)}>
               Get a Quote
             </Link>

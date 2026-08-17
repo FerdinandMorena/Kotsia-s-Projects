@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { AnimateOnScroll } from "@/components/animate-on-scroll";
+import { PageHero } from "@/components/ui/page-hero";
 import {
   CheckCircle,
   Target,
@@ -98,37 +99,21 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative pt-32 pb-24 min-h-[60vh] flex items-center">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/52.webp"
-            alt="Skilled carpenter with over 8 years experience in Limpopo and Gauteng"
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-black/50" />
-        </div>
-        <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          <AnimateOnScroll animation="fade-up" className="max-w-3xl">
-            <span className="text-white/80 text-sm font-medium tracking-wider uppercase">
-              About Kotsia&apos;s Projects
-            </span>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mt-3 mb-6 text-balance">
-              Carpentry Specialists Serving Limpopo & Gauteng for Over a 8 years
-            </h1>
-            <p className="text-xl text-white/90 leading-relaxed">
-              A passionate carpenter dedicated to bringing craftsmanship and
-              precision to every custom woodwork project, creating spaces that
-              enhance homes and deliver lasting value across Limpopo and
-              Gauteng.
-            </p>
-          </AnimateOnScroll>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="About Kotsia's Projects"
+        headline="Carpentry Specialists Serving Limpopo & Gauteng for Over 8 Years"
+        subcopy="A passionate carpenter dedicated to bringing craftsmanship and precision to every custom woodwork project, creating spaces that enhance homes and deliver lasting value across Limpopo and Gauteng."
+        image="/heroes/about.webp"
+        imageAlt="Hand planes, chisels and wood shavings on a carpenter's workbench in warm workshop light"
+        meta={[
+          "8+ Years on the Tools",
+          "500+ Custom Projects",
+          "Limpopo & Gauteng",
+        ]}
+      />
 
       {/* Story Section */}
-      <section className="py-24 bg-card">
+      <section className="py-24 bg-card border-t border-accent/25">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <AnimateOnScroll animation="fade-right">
@@ -146,7 +131,7 @@ export default function AboutPage() {
             </AnimateOnScroll>
 
             <AnimateOnScroll animation="fade-left">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+              <h2 className="text-3xl md:text-4xl font-serif font-semibold text-foreground mb-6">
                 Our Story
               </h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
@@ -227,7 +212,7 @@ export default function AboutPage() {
             <span className="text-primary text-sm font-medium tracking-wider uppercase">
               Our Values
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-3 mb-4 text-balance">
+            <h2 className="text-3xl md:text-4xl font-serif font-semibold text-foreground mt-3 mb-4 text-balance">
               What Drives Us
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -267,7 +252,7 @@ export default function AboutPage() {
               <span className="text-primary text-sm font-medium tracking-wider uppercase">
                 Experience & Expertise
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-3 mb-6 text-balance">
+              <h2 className="text-3xl md:text-4xl font-serif font-semibold text-foreground mt-3 mb-6 text-balance">
                 A 8 years of Excellence in Limpopo & Gauteng
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-8">

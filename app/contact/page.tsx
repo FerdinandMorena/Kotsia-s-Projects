@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { AnimateOnScroll } from "@/components/animate-on-scroll";
+import { PageHero } from "@/components/ui/page-hero";
 import { ContactForm } from "@/components/contact-form";
 import { Phone, Mail, MapPin, Clock, MessageCircle } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
@@ -28,42 +28,23 @@ export default function ContactPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative pt-32 pb-24 min-h-[60vh] flex items-center">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/47.webp"
-            alt="Contact Kotsia's Projects for carpentry services in Limpopo and Gauteng"
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-black/50" />
-        </div>
-        <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          <AnimateOnScroll animation="fade-up" className="max-w-3xl">
-            <span className="text-white/80 text-sm font-medium tracking-wider uppercase">
-              Get in Touch
-            </span>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mt-3 mb-6 text-balance">
-              Request a Free Quote — Limpopo & Gauteng
-            </h1>
-            <p className="text-xl text-white/90 leading-relaxed">
-              Ready to start your carpentry or building project? Contact us for
-              a free consultation and quote. We serve Limpopo and Gauteng with
-              reliable, professional service.
-            </p>
-          </AnimateOnScroll>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Get in Touch"
+        headline="Request a Free Quote — Limpopo & Gauteng"
+        subcopy="Ready to start your carpentry or building project? Contact us for a free consultation and quote. We serve Limpopo and Gauteng with reliable, professional service."
+        image="/heroes/contact.webp"
+        imageAlt="An open notebook, carpenter's pencil, folding rule and tape measure on a workshop desk"
+        meta={["Free Consultation", "No Obligation", "Fast Response"]}
+      />
 
       {/* Contact Section */}
-      <section className="py-24 bg-card">
+      <section className="py-24 bg-card border-t border-accent/25">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16">
             {/* Contact Form */}
             <AnimateOnScroll animation="fade-right">
               <div className="bg-background p-8 rounded-xl border border-border">
-                <h2 className="text-2xl font-bold text-foreground mb-2">
+                <h2 className="text-2xl font-serif font-semibold text-foreground mb-2">
                   Request a Quote
                 </h2>
                 <p className="text-muted-foreground text-sm mb-6">
@@ -77,7 +58,7 @@ export default function ContactPage() {
             {/* Contact Info */}
             <AnimateOnScroll animation="fade-left">
               <div>
-                <h2 className="text-2xl font-bold text-foreground mb-6">
+                <h2 className="text-2xl font-serif font-semibold text-foreground mb-6">
                   Get in Touch
                 </h2>
                 <p className="text-muted-foreground leading-relaxed mb-8">
@@ -188,7 +169,7 @@ export default function ContactPage() {
       <section className="py-24 bg-card">
         <div className="container mx-auto px-4 lg:px-8">
           <AnimateOnScroll animation="fade-up" className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-foreground mb-4">
+            <h2 className="text-3xl font-serif font-semibold text-foreground mb-4">
               Frequently Asked Questions
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">

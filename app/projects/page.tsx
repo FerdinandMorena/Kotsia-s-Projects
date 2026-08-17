@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { AnimateOnScroll } from "@/components/animate-on-scroll";
+import { PageHero } from "@/components/ui/page-hero";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -360,35 +361,21 @@ export default function ProjectsPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative pt-32 pb-24 min-h-[60vh] flex items-center">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/46.webp"
-            alt="Carpenters planning custom woodwork projects"
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-black/50" />
-        </div>
-        <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          <AnimateOnScroll animation="fade-up" className="max-w-3xl">
-            <span className="text-white/80 text-sm font-medium tracking-wider uppercase">
-              Our Portfolio
-            </span>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mt-3 mb-6 text-balance">
-              Projects We&apos;re Proud Of
-            </h1>
-            <p className="text-xl text-white/90 leading-relaxed">
-              Explore our portfolio of completed projects showcasing our
-              craftsmanship and attention to detail across all service areas.
-            </p>
-          </AnimateOnScroll>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Our Portfolio"
+        headline="Projects We're Proud Of"
+        subcopy="Explore our portfolio of completed projects showcasing our craftsmanship and attention to detail across all service areas."
+        image="/heroes/projects.webp"
+        imageAlt="Close-up of a precisely fitted hardwood joint, lit by warm raking light"
+        meta={[
+          "10 Project Categories",
+          "90+ Photographed Jobs",
+          "Limpopo & Gauteng",
+        ]}
+      />
 
       {/* Filter & Gallery */}
-      <section className="py-24 bg-card">
+      <section className="py-24 bg-card border-t border-accent/25">
         <div className="container mx-auto px-4 lg:px-8">
           {/* Filter Buttons */}
           <AnimateOnScroll animation="fade-up" className="mb-12">
@@ -512,7 +499,7 @@ export default function ProjectsPage() {
             animation="fade-up"
             className="text-center max-w-3xl mx-auto"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6 text-balance">
+            <h2 className="text-3xl md:text-4xl font-serif font-semibold text-foreground mb-6 text-balance">
               Ready to Start Your Project?
             </h2>
             <p className="text-muted-foreground text-lg mb-8 leading-relaxed">

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { AnimateOnScroll } from "@/components/animate-on-scroll";
+import { PageHero } from "@/components/ui/page-hero";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle, Star } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
@@ -17,11 +18,17 @@ export const metadata: Metadata = {
     canonical: "/services",
   },
   openGraph: {
-    title: "Carpentry & Building Services in Limpopo & Gauteng | Kotsia's Projects",
+    title:
+      "Carpentry & Building Services in Limpopo & Gauteng | Kotsia's Projects",
     description:
       "Full range of carpentry and building services across Limpopo & Gauteng. Carpentry is our primary specialty, supported by tiling, plastering, drainage, and welding.",
     url: `${siteConfig.url}/services`,
-    images: [{ url: `${siteConfig.url}/images/48.webp`, alt: "Carpentry and building services in Limpopo and Gauteng" }],
+    images: [
+      {
+        url: `${siteConfig.url}/images/48.webp`,
+        alt: "Carpentry and building services in Limpopo and Gauteng",
+      },
+    ],
   },
 };
 
@@ -119,36 +126,21 @@ export default function ServicesPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative pt-32 pb-24 min-h-[60vh] flex items-center">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/48.webp"
-            alt="Professional carpentry and building services in Limpopo and Gauteng"
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-black/50" />
-        </div>
-        <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          <AnimateOnScroll animation="fade-up" className="max-w-3xl">
-            <span className="text-white/80 text-sm font-medium tracking-wider uppercase">
-              All Services — Limpopo & Gauteng
-            </span>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mt-3 mb-6 text-balance">
-              Carpentry & Building Services in Limpopo & Gauteng
-            </h1>
-            <p className="text-xl text-white/90 leading-relaxed">
-              Carpentry is our primary specialty, backed by tiling, plastering,
-              stormwater drainage, and welding — delivering complete home
-              improvement solutions across both provinces.
-            </p>
-          </AnimateOnScroll>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="All Services — Limpopo & Gauteng"
+        headline="Carpentry & Building Services in Limpopo & Gauteng"
+        subcopy="Carpentry is our primary specialty, backed by tiling, plastering, stormwater drainage, and welding — delivering complete home improvement solutions across both provinces."
+        image="/heroes/services.webp"
+        imageAlt="Chisels, hand planes, a trowel, spirit level and welding mask laid out on dark timber"
+        meta={[
+          "Carpentry-Led",
+          "Six Trades In-House",
+          "Free Quotes",
+        ]}
+      />
 
       {/* Services Grid */}
-      <section className="py-24 bg-card">
+      <section className="py-24 bg-card border-t border-accent/25">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="space-y-16">
             {services.map((service, index) => (
@@ -170,7 +162,7 @@ export default function ServicesPage() {
                         </span>
                       )}
                     </div>
-                    <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+                    <h2 className="text-2xl md:text-3xl font-serif font-semibold text-foreground mb-4">
                       {service.title}
                     </h2>
                     <p className="text-muted-foreground leading-relaxed mb-6">
@@ -230,7 +222,7 @@ export default function ServicesPage() {
             animation="fade-up"
             className="text-center max-w-3xl mx-auto"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-6 text-balance">
+            <h2 className="text-3xl md:text-4xl font-serif font-semibold text-primary-foreground mb-6 text-balance">
               Need a Carpenter in Limpopo or Gauteng?
             </h2>
             <p className="text-primary-foreground/80 text-lg mb-8 leading-relaxed">
